@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Domimotica</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_config">Config</string>
+
+    <string name="title_dashboard_name_box">name_box</string>
+    <string name="text_on"> On</string>
+    <string name="text_off"> Off</string>
+
+    <string name="currently_connected_box">Currently connected nodes</string>
+    <string name="connected_amount_box"> 12 </string>
+
+    <string-array name="dashboard_spinner_array">
+        <item>Node 1</item>
+        <item>Node 2</item>
+        <item>Node 3</item>
+        <item>Node 4</item>
+        <item>Node 5</item>
+    </string-array>
+
+</resources>
