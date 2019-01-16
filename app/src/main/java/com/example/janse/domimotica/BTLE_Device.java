@@ -1,10 +1,7 @@
-package android.kaviles.bletutorial;
+package com.example.janse.domimotica;
 
 import android.bluetooth.BluetoothDevice;
 
-/**
- * Created by Kelvin on 5/8/16.
- */
 public class BTLE_Device {
 
     private BluetoothDevice bluetoothDevice;

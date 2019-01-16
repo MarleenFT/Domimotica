@@ -1,4 +1,4 @@
-package android.kaviles.bletutorial;
+package com.example.janse.domimotica;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,12 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Adapter;
 
 import java.util.ArrayList;
 
-/**
- * Created by Kelvin on 5/7/16.
- */
 public class ListAdapter_BTLE_Devices extends ArrayAdapter<BTLE_Device> {
 
     Activity activity;

@@ -1,4 +1,4 @@
-package android.kaviles.bletutorial;
+package com.example.janse.domimotica;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -7,9 +7,6 @@ import android.content.Intent;
 import android.view.Gravity;
 import android.widget.Toast;
 
-/**
- * Created by Kelvin on 5/8/16.
- */
 public class Utils {
 
     public static boolean checkBluetooth(BluetoothAdapter bluetoothAdapter) {
