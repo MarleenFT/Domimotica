@@ -2,6 +2,7 @@ package android.kaviles.bletutorial;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -26,9 +27,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ListAdapter_BTLE_Devices adapter;
 
     private Button btn_Scan;
+    private Context mContext;
 
     private BroadcastReceiver_BTState mBTStateUpdateReceiver;
     private Scanner_BLTE mBTLeScanner;
+    private GATT_Services mGattServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mBTDevicesHashMap = new HashMap<>();
         mBTDevicesArrayList = new ArrayList<>();
+
+        mGattServices = new GATT_Services(this);
+
+        mContext = this;
 
         adapter = new ListAdapter_BTLE_Devices(this, R.layout.btle_device_list_item, mBTDevicesArrayList);
 
@@ -112,7 +119,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        // Used in future BLE tutorials
+        BluetoothDevice device;
+        device = ((BTLE_Device) parent.getItemAtPosition(position)).getBluetoothDevice();
+        mGattServices.connectToGatt(device);
     }
 
     /**
@@ -125,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.btn_scan:
-                Utils.toast(getApplicationContext(), "Scan Button Pressed");
+                Utils.toast(mContext, "Scan Button Pressed");
 
                 if(!mBTLeScanner.isScanning()){
                     startScan();

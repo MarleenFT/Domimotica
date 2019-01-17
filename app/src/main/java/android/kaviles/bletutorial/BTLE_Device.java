@@ -29,4 +29,6 @@ public class BTLE_Device {
     public int getRSSI() {
         return rssi;
     }
+
+    public BluetoothDevice getBluetoothDevice() { return this.bluetoothDevice; }
 }

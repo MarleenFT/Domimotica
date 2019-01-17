@@ -16,14 +16,14 @@ import java.util.ArrayList;
  */
 public class ListAdapter_BTLE_Devices extends ArrayAdapter<BTLE_Device> {
 
-    Activity activity;
+    Context mContext;
     int layoutResourceID;
     ArrayList<BTLE_Device> devices;
 
-    public ListAdapter_BTLE_Devices(Activity activity, int resource, ArrayList<BTLE_Device> objects) {
-        super(activity.getApplicationContext(), resource, objects);
+    public ListAdapter_BTLE_Devices(Context mContext, int resource, ArrayList<BTLE_Device> objects) {
+        super(mContext, resource, objects);
 
-        this.activity = activity;
+        this.mContext = mContext;
         layoutResourceID = resource;
         devices = objects;
     }
@@ -33,7 +33,7 @@ public class ListAdapter_BTLE_Devices extends ArrayAdapter<BTLE_Device> {
 
         if (convertView == null) {
             LayoutInflater inflater =
-                    (LayoutInflater) activity.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(layoutResourceID, parent, false);
         }
 
